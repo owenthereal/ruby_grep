@@ -1,6 +1,6 @@
 = ruby_grep
 
-Module to search file(s) for lines that match a given pattern. It implements full functionality of the "grep" command in Unix/Linux system with Ruby. Specification goes to http://www.opengroup.org/onlinepubs/9699919799/utilities/grep.html.
+Module to search file(s) for lines that match a given pattern. It (will) implements full functionality of the "grep" command in Unix/Linux system with Ruby. Specification goes to http://www.opengroup.org/onlinepubs/9699919799/utilities/grep.html.
 
 == Note on Patches/Pull Requests
 
@@ -18,11 +18,11 @@ Module to search file(s) for lines that match a given pattern. It implements ful
   
   # grep content in a file
   file = File.open(file_path)
-  file.grep('example', {:recursive => false}) do |path, line|
+  file.grep(/example/, {:recursive => false}) do |path, line|
     puts "#{path}: #{line}"
   end
 
-  # grep content by traversing a folder
+  # grep content by recursively traversing a folder
   File.grep(folder_path, 'example', {:recursive => true}).each do |match|
     puts "#{match.path}: #{match.line}" # match is a Struct object with path and line as attributes
   end

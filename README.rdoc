@@ -6,10 +6,8 @@ Module to search file(s) for lines that match a given pattern. It implements ful
 
 * Fork the project.
 * Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-(if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Add tests for it. This is important so I don't break it in a future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.(if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
 == Install
@@ -21,12 +19,12 @@ future version unintentionally.
   # grep content in a file
   file = File.open(file_path)
   file.grep('example', {:recursive => false}) do |path, line|
-     puts "#{path}: #{line}"
+    puts "#{path}: #{line}"
   end
 
-  # grep content by traversing of a folder
+  # grep content by traversing a folder
   File.grep(folder_path, 'example', {:recursive => true}).each do |match|
-  	puts "#{match.path}: #{match.line}" # match is a Struct object with path and line as attributes
+    puts "#{match.path}: #{match.line}" # match is a Struct object with path and line as attributes
   end
 
 == Copyright
